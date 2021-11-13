@@ -27,7 +27,7 @@ export default function InputsView() {
       } else if (value2 > 28 && 42 > value2) {
         setValue2(arr[2]);
       }
-    } else if (value1 > 10000) {
+    } else if (value1 >= 10000) {
       if (value2 > 42 && 56 > value2) {
         setValue2(arr[3]);
       } else if (value2 > 56 && 70 > value2) {
