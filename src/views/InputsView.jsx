@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { form, container } from "../styles/Inputs.module.css";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
@@ -8,6 +8,15 @@ export default function InputsView() {
 
   const [value1, setValue1] = useState(1000);
   const [value2, setValue2] = useState(3);
+
+  useEffect(() => {
+    if (value1 >= 10000 && value2 < 54) {
+      setValue2(54);
+    }
+    if (value1 < 10000 && value2 > 14) {
+      setValue2(14);
+    }
+  }, [value1, value2]);
 
   const handleChange = (value1, value2, arr) => {
     if (value1 < 10000) {
