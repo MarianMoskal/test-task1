@@ -27,7 +27,9 @@ const Navigation = ({ props: { isLoggedIn, user, handleLogOut } }) => {
               <span>Inputs</span>
             </NavLink>
 
-            <span>User: {user}</span>
+            <span>
+              User: <b>{user}</b>
+            </span>
 
             <NavLink to="/">
               <Button onClick={handleLogOut}>Log out</Button>

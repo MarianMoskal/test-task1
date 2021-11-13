@@ -2,6 +2,7 @@ import {
   //lazy, Suspense,
   useState,
 } from "react";
+import { container } from "./styles/App.module.css";
 import { Route, Routes, Outlet, useNavigate } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
@@ -33,26 +34,28 @@ export default function App() {
   return (
     <>
       <Navigation props={{ isLoggedIn, user, handleLogOut }} />
-      <Routes>
-        {/* <Suspense fallback={<h1>Loading...</h1>}> */}
-        {!isLoggedIn && (
-          <Route
-            exact
-            path="/"
-            element={<AuthView handleSubmit={handleIsLoggedIn} />}
-          />
-        )}
+      <div className={container}>
+        <Routes>
+          {/* <Suspense fallback={<h1>Loading...</h1>}> */}
+          {!isLoggedIn && (
+            <Route
+              exact
+              path="/"
+              element={<AuthView handleSubmit={handleIsLoggedIn} />}
+            />
+          )}
 
-        {isLoggedIn && (
-          <>
-            <Route path="/posts" element={<PostsView />} />
+          {isLoggedIn && (
+            <>
+              <Route path="/posts" element={<PostsView />} />
 
-            <Route path="/inputs" element={<InputsView />} />
-          </>
-        )}
-        {/* </Suspense> */}
-      </Routes>
-      <Outlet />
+              <Route path="/inputs" element={<InputsView />} />
+            </>
+          )}
+          {/* </Suspense> */}
+        </Routes>
+        <Outlet />
+      </div>
     </>
   );
 }

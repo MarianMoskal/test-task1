@@ -1,7 +1,8 @@
 .nav {
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
   background-color: greenyellow;
   color: blue;
+  height: 40px;
 }
