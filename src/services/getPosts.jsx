@@ -1,6 +1,6 @@
 async function getPosts() {
   const response = await fetch(
-    "http://jsonplaceholder.typicode.com/posts?_limit=10"
+    "https://jsonplaceholder.typicode.com/posts?_limit=10"
   );
 
   if (!response.ok) {
