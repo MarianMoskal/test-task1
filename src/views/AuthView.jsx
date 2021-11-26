@@ -1,21 +1,6 @@
 import { indent, centered } from "../styles/AuthView.module.css";
 import React, { useState } from "react";
-import InputMask from "react-input-mask";
 import { Input, Button } from "@mui/material";
-
-const MaskedInput = (props) => (
-  <InputMask
-    mask="+38(099) 999 99 99"
-    alwaysShowMask
-    id="phone"
-    maskChar={null}
-    value={props.value}
-    onChange={props.onChange}
-    placeholder="Enter your phone number"
-  >
-    {(inputProps) => <Input className={indent} required {...inputProps} />}
-  </InputMask>
-);
 
 export default function AuthView({ handleSubmit }) {
   const [phone, setPhone] = useState("");
@@ -27,7 +12,7 @@ export default function AuthView({ handleSubmit }) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (phone.length < 18 || password.length < 4) {
+    if (phone.length < 10 || password.length < 4) {
       alert("Enter valid phone number or password");
       return;
     }
@@ -45,7 +30,19 @@ export default function AuthView({ handleSubmit }) {
         <label className={indent} htmlFor="phone">
           Phone
         </label>
-        <MaskedInput value={phone} onChange={handlePhoneInput} />
+        <Input
+          className={indent}
+          inputProps={{
+            pattern: "[0-9]+",
+            title: "Numbers only, minimum length - 10 digits",
+          }}
+          id="phone"
+          type="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+          onChange={handlePhoneInput}
+        />
 
         <label className={indent} htmlFor="password">
           Password
