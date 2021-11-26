@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles/AuthView.module.css"],"names":[],"mappings":"AAAA,wBACE,iBACF,CAEA,0BACE,iBACF","file":"7.bf85b0f3.chunk.css","sourcesContent":[".indent {\n  margin-right: 20px;\n}\n\n.centered {\n  text-align: center;\n}\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles/PostView.module.css","webpack://src/styles/Post.module.css"],"names":[],"mappings":"AAAA,uBACE,eACF,CAEA,gCACE,eACF,CCNA,sBACE,iBACF","file":"6.99ee3cab.chunk.css","sourcesContent":[".title {\n  margin-bottom: 0;\n}\n\n.postsContainer {\n  margin-top: 50px;\n}\n",".paragraf {\n  padding-left: 30px;\n}\n"]}
